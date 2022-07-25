@@ -8,15 +8,15 @@
 
 	<div class="login-text-wrapper">
 		<h1>Welcome to Artist Exchange</h1>
-		<h2>Something something slogan</h2>
+		<h2>Here for your art needs!</h2>
 	</div>	
 
 	<form class="login-form" method="post">
 		{% csrf_token %}
 		
-		<p><label for="id_username">Username:</label> <input class="username-text-box" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username"></p>
+		<p><label for="id_username" style="color:white">Username:</label> <input class="username-text-box" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username" style="padding-left:10px"></p>
 
-		<p><label for="id_password">Password:</label> <input class="password-text-box" type="password" name="password" autocomplete="current-password" required="" id="id_password"></p>
+		<p><label for="id_password" style="color:white">Password:</label> <input class="password-text-box" type="password" name="password" autocomplete="current-password" required="" id="id_password" style="padding-left:10px"></p>
 
 		<div class="login-buttons-area">
 			<input class="login-button" type="submit" value="Login">
