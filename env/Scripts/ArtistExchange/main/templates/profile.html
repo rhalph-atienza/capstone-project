@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+
+<div class="profile-page">
+    <div class="profile-header">
+          <div class="title-wrapper">
+            <div class="text-wrapper">
+              <h1>My Profile</h1>
+            </div>
+          </div>
+    </div>
+
+<div class="main-profile">
+
+      <div class="user-info">
+          <div class="user-info-button-area">
+              <div class="update-button-area">
+                  <div class="update-button">
+                    <a href="{% url 'profile-edit' %}"><p>Edit Profile</p></a>
+                  </div>  
+              </div>
+          </div>
+
+            <div class="user-info-0">
+              <div class="username-box">
+                  <p class="user-details-title">Username</p>
+                  <p class="user-details-value">{{ user.username }}</p>
+                </div>
+            </div>
+            <div class="user-details-1">
+                <div class="user-name-box">
+                  <p class="user-details-title">Artist Account?</p>
+                  <p class="user-details-value">{{ user.profile.is_artist}}</p>
+                </div>
+
+                <div class="user-birthdate-box">
+                  <p class="user-details-title">Bio</p>
+                  <p class="user-details-value">{{ user.profile.bio }}</p>
+                </div>
+            </div>
+
+            <div class="user-details-2">
+                  <div class="user-commissions-open-box">
+                  <p class="user-details-title">Commissions Open?</p>
+                  <p class="user-details-value">{{ user.profile.commissions_open }}</p>
+                </div>
+
+                <div class="user-commission-rates-box">
+                  <p class="user-details-title">Commission Rates</p>
+                  <p class="user-details-value">{{ user.profile.commission_rates }}</p>
+                </div>
+            </div>
+
+            <div class="user-details-3">
+                  <div class="user-genre-box">
+                  <p class="user-details-title">Art Genre/Style</p>
+                  <p class="user-details-value">{{ user.profile.genre }}</p>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

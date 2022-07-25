@@ -1,0 +1,43 @@
+<!-- Page for displaying all the logged in user's uploaded art -->
+
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+
+<div class="art-list-page">
+    <div class="art-header">
+          <div class="title-wrapper">
+            <div class="text-wrapper">
+              <h1>My Gallery</h1>
+              <h2>Collection of your posted art</h2>
+            </div>
+          </div>
+    </div>
+      
+<div class="art-part">
+
+
+         <div class="post-art-button-area">
+              <div class="post-art-button">
+                  <a href="{% url 'art-create' %}">Post Art</a>
+              </div>  
+          </div>
+          
+        <div class="profile-table">
+          <div class="art-table-content">
+            {% for art in all_art %}
+            <div class="art-table-component">
+              <div class="center-wrapper space-between">
+                <hr>
+                <p class="art-table-title"><a href="{% url 'art-detail' art.id %}">{{ art.title }}</a></p>
+                <p class="art-table-image"><img src="{{ art.image.url}}"></p>
+                <p class="art-table-description">{{ art.description }}</p>
+                <p class="art-table-price">₱{{ art.price }}</p>
+                <hr>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+    </div>
+{% endblock %}

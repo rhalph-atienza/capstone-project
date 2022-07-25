@@ -1,0 +1,22 @@
+<!-- Page for displaying details of an individual art entry. -->
+
+{% extends "base.html" %}
+
+{% block body %}
+<div class="art-detail-page">
+	<h1>Artwork Details</h1>
+
+	<div class="art-details">
+		<p>Title: {{ object.title }}</p>
+		<img src="{{ object.image.url}}">
+		<p>Description:<br>{{ object.description }}</p>
+		<p>Price: ₱{{ object.price }}</p>
+		<br>
+		<div class="art-details-buttons">
+			<a href="{% url 'art-update' object.id %}">Edit</a>
+			<a href="{% url 'art-delete' object.id %}">Delete</a>
+		</div>
+	</div>
+	
+</div>
+{% endblock %}

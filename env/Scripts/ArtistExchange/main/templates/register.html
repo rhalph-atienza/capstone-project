@@ -1,0 +1,50 @@
+<!-- Registration Page -->
+
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="register-page">
+	<div class=register-text-wrapper>
+		<h1>Create an account.</h1>
+	</div>	
+
+	<form class="register-form" method="post">
+		{% csrf_token %}
+
+		<div class="text-boxes">
+
+			<div class="text-box-stuff">
+				<p class="labels">Username</p>
+				<input class="individual-text-boxes" type="text" name="username" maxlength="150" autofocus="" required="" id="id_username">
+				<p class="helptext">Required. 150 characters or less.</p>
+			</div>
+
+			<div class="text-box-stuff">
+				<p class="labels">Email</p>
+				<input class="individual-text-boxes" type="email" name="email" maxlength="254" required="" id="id_email"></p>
+				<p class="helptext">Required. Use a valid email address.</p>
+			</div>
+
+			<div class="text-box-stuff">
+				<p class="labels">Password</p>
+				<input class="individual-text-boxes" type="password" name="password1" autocomplete="new-password" required="" id="id_password1">
+				<p class="helptext">Enter a password.</p>
+			</div>
+
+			<div class="text-box-stuff">
+				<p class="labels">Password Confirmation</p>
+				<input class="individual-text-boxes" type="password" name="password2" autocomplete="new-password" required="" id="id_password2">
+				<p class="helptext">Enter the same password, for verification.</p>
+			</div>
+		</div>
+
+		<div class="register-button2">
+			<input class="submit-button" type="submit" value="Register">
+		</div>
+
+	</form>
+</div>
+
+
+{% endblock %}

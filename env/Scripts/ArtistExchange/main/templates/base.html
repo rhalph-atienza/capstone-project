@@ -1,0 +1,53 @@
+<!-- html template for the header and footer. Used in all other templates. -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>ArtistExchange</title>
+    <link rel="stylesheet" href="{% static 'main/styles.css' %}">
+    {% block extrahead %}{% endblock %}
+
+
+  </head>
+ 
+  <body>
+    <nav>
+      <div class="center-wrapper space-between">
+        <div class="page-links">
+          <div class="logo"><a href = "{% url 'home' %}"><img src = "{% static 'main/logo.png' %}"></a></div>
+          <div class="home"><a href = "{% url 'home' %}"><p>Home</p></a></div>
+          <div class="profile"><a href = "{% url 'profile' %}"><p>User Profile</p></a></div>
+          <div class-="logout"><a href = "{% url 'logout' %}"><p>Logout</p></a></div>
+        </div>
+      </div>
+    </nav>
+ {% block body %}
+
+  {% endblock %}
+     <footer>
+      <div class="center-wrapper">
+        <div class="space-between">
+          <div class="page-links">
+          </div>
+        </div>
+        <div class="home-bottom">
+  {% if user.is_authenticated %}
+  <a href="{% url 'logout' %}"><p>Logout</p></a>
+  <a href="{% url 'password_change' %}"><p>Change password</p></a>
+  {% else %}
+  <a href="{% url 'login' %}"><p>Login</p></a>
+  {% endif %}
+</div>
+        <hr>
+        <div class="space-between">
+          <p>[name of developers]</p>
+          <p>&#169 2022</p>
+        </div>
+      </div>
+
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!-- Landing page for the Find Artists feature -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extrahead %}
+<title>Find Artists Page</title>
+<link rel="stylesheet" type="text/css" href="{% static 'main/prp-landing.css'%}">
+{% endblock %}
+
+{% block body %}
+<div class="everything">
+	<div class="art-text-wrapper">
+		<div class="title-wrapper">
+        	<div class="text-wrapper">
+              <h1>Find Artists</h1>
+              <h2>Search by Artstyle/Genre</h2>
+    		</div>
+    	</div>
+    </div>
+
+	<div class="artist-search-main">
+		<form action="{% url 'artist-search' %}" method="get">
+			<input name="q" type="text" placeholder="Artist Genre/Style">
+			<button type="submit"><p>Search</p></button>
+		</form>
+		        <!--onclick="window.location.href='prp-search.html';"-->
+	</div> 
+
+</div>
+{% endblock %}

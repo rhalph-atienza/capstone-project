@@ -1,0 +1,16 @@
+<!-- Page for confirming deletion of art -->
+
+{% extends "base.html" %}
+
+{% block body %}
+<h1>Delete Post?</h1>
+
+<form method="post">
+	{% csrf_token %}
+	{{ object.title }}
+	<img src="{{ object.image.url }}">
+	<br>
+	<input type="submit" value="Delete">
+	<a href="{% url 'gallery' %}">Cancel</a>
+</form>
+{% endblock %}

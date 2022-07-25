@@ -1,0 +1,27 @@
+<!-- Page for creating a new art entry. -->
+
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="add-art-page">
+
+	<div class="add-art-text-wrapper">
+		<h1>Upload an Artwork</h1>
+	</div>
+
+	<form class="add-art-form" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<div class="add-art-button-area2">
+			<input class="add-art-button2" type="submit" value="Upload Art">
+
+			<div class="back-button">
+				<a href="{% url 'gallery' %}"><div class="back-button-p">BACK</div></a>
+			</div>
+		</div>
+
+	</form>
+</div>
+
+{% endblock %}

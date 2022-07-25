@@ -1,0 +1,30 @@
+<!-- Page for editing user profile. Makes use of forms -->
+
+{% extends "base.html" %}
+
+{% block body %}
+<div class="edit-profile-page">
+	<h1>Edit Profile</h1>
+	<form class="edit-profile-form" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+
+		<div class="edit-profile-text-boxes">
+			
+			{{ u_form.as_p }}
+			{{ p_form.as_p }}
+	
+
+			<div class="edit-profile-button-area-2">
+				<input class="edit-profile-button2" type="submit" value="UPDATE">
+			
+				<div class="back-button">
+					<a href="{% url 'profile' %}"><p>BACK</p></a>
+				</div>
+		</div>
+			</div>
+
+		</div>
+	</form>
+
+</div>
+{% endblock %}

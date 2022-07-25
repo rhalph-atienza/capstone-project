@@ -1,0 +1,23 @@
+<!-- Page for displaying list of following/follower user accounts -->
+
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+
+<div class="title-wrapper">
+  <div class="text-wrapper">
+    <h1>Artist List</h1>
+  </div>
+</div>
+ 
+
+<div class="follow-list">
+    {% for following in all_following %}
+            <p>{{ following.user.username }}</p>
+          {% endfor %}
+
+          {% for following in object_list %}
+            <a href="{% url 'artist-detail' following.user.id %}"><p>{{ following.user.username }}</p></a>
+          {% endfor %}
+</div>
+{% endblock %}
