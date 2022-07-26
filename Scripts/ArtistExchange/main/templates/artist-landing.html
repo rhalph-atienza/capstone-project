@@ -10,16 +10,10 @@
 
 {% block body %}
 <div class="everything">
-	<div class="art-text-wrapper">
-		<div class="title-wrapper">
-        	<div class="text-wrapper">
-              <h1>Find Artists</h1>
-              <h2>Search by Artstyle/Genre</h2>
-    		</div>
-    	</div>
-    </div>
+	<h1> Find Artists Page</h1>
+	<h3 style="color: white;"> Search by Artstyle/Genre </h3>  <br>
 
-	<div class="artist-search-main">
+	<div class="artist-search-main" style="text-align: center;">
 		<form action="{% url 'artist-search' %}" method="get">
 			<input name="q" type="text" placeholder="Artist Genre/Style">
 			<button type="submit"><p>Search</p></button>

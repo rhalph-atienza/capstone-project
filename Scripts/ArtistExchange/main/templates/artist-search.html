@@ -4,13 +4,15 @@
 {% load static %}
 	{% block extrahead %}
 	<link rel="stylesheet" type="text/css" href="{% static 'main/prp-search.css' %}">
+
     {% endblock %}
     
     {% block body %}
+	
 	<div class="search">
 	    <h1> Find Artists Page</h1>
-	    <h3> Search by Artstyle/Genre </h3>
-	
+	    <h3 style="color: white;"> Search by Artstyle/Genre </h3> <br>
+
 	    <div class="searchbar">
 	    	<form action="{% url 'artist-search' %}" method="get">
 				<input name="q" type="text" placeholder="Art Genre/Style">
